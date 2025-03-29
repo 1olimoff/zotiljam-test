@@ -5,120 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Formasi</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
         body {
-    font-family: 'Poppins', sans-serif;
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
-    color: #333;
-}
+            background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-h1 {
-    text-align: center;
-    color: #2c3e50;
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto;
+        }
 
-h2 {
-    text-align: center;
-    font-size: 14px;
-    font-weight: normal;
-    color: #555;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #388e3c;
+        }
 
-form {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
+        h2 {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
 
-.question {
-    margin-bottom: 15px;
-    padding: 15px;
-    background: #fdfdfd;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            background: #f9f9f9;
+            transition: 0.6s;
+            text-align: start;
+        }
 
-.question:hover {
-    transform: scale(1.02);
-    background: #f8f9fa;
-}
+        .question:hover {
+            transform: scale(1.02);
+            background: #e8f5e9;
+        }
 
-.question p {
-    font-weight: 600;
-    color: #34495e;
-    margin-bottom: 8px;
-}
+        p {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-label {
-    display: flex;
-    align-items: center;
-    margin-bottom: 6px;
-    font-size: 14px;
-    color: #555;
-    cursor: pointer;
-}
+        label {
+            display: block;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
 
-label input {
-    margin-right: 12px;
-    accent-color: #ff6b81;
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
-}
+        label:hover {
+            background: #c8e6c9;
+        }
 
-label input:checked {
-    transform: scale(1.3);
-}
+        input[type="radio"] {
+            margin-right: 10px;
+        }
 
-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(to right, #ff6b81, #ff4757);
-    color: white;
-    border: none;
-    border-radius: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #66bb6a, #43a047);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
 
-button:hover {
-    background: linear-gradient(to right, #ff4757, #e84118);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(255, 107, 129, 0.5);
-}
+        button:hover {
+            background: linear-gradient(135deg, #43a047, #2e7d32);
+            transform: scale(1.05);
+        }
 
-.result {
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 18px;
-    padding: 12px;
-    border-radius: 12px;
-    background: #ffeaa7;
-    color: #d35400;
-    display: none;
-    transition: opacity 0.5s ease-in-out;
-}
+        .result {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            display: none;
+            background: #ffecb3;
+            color: #e65100;
+        }
 
-.result.show {
-    display: block;
-    opacity: 1;
-}
+        .result.show {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
-<body>
+<body class="container">
     <h1>Bolalarda zotiljam kasalligini aniqlash bo'yicha dasturiy ta'minot</h1>
     <h2>Ushbu dasturiy ta'minot tibbiyotning birlamchi bo'g'inida faoliyat ko'rsatadigan pediatorlar va umumiy amaliyot shifokorlari uchun mo'ljallangan bo'lib zotiljam kasalligini mavjudligni prognozlash maqsadida qo'llaniladi</h2>
     <form id="quizForm">
@@ -126,7 +132,7 @@ button:hover {
             <p>Bolada yo'tal bormi</p>
             <label><input type="radio" name="q1" value="0"> Yo'q</label>
             <label><input type="radio" name="q1" value="1"> Sanoqli</label>
-            <label><input type="radio" name="q1" value="2"> Bor</label>
+            <label><input type="radio" name="q1" value="2"> Ko'p marta</label>
         </div>
 
         <div class="question">
@@ -168,13 +174,13 @@ button:hover {
         <div class="question">
             <p>Uyquning buzilishi</p>
             <label><input type="radio" name="q8" value="0"> Yo'q</label>
-            <label><input type="radio" name="q8" value="1"> Biroz</label>
-            <label><input type="radio" name="q8" value="2"> Yaqqol</label>
+            <label><input type="radio" name="q8" value="1"> 1 marta</label>
+            <label><input type="radio" name="q8" value="2"> Ko'p marta</label>
         </div>
         <div class="question">
             <p>Ovqatdan bosh tortish</p>
             <label><input type="radio" name="q9" value="0"> Yo'q</label>
-            <label><input type="radio" name="q9" value="1"> Biroz</label>
+            <label><input type="radio" name="q9" value="1"> Ishtaxa past</label>
             <label><input type="radio" name="q9" value="2"> Ovqatdan bosh tortadi</label>
         </div>
         <div class="question">
@@ -192,15 +198,15 @@ button:hover {
         </div>
         <div class="question">
             <p>Qonning kislarodga to'yinishi  95% kam (Pulsoksimetriya)</p>
-            <label><input type="radio" name="q12" value="0"> 100%</label>
-            <label><input type="radio" name="q12" value="1"> 100 - 95 %</label>
-            <label><input type="radio" name="q12" value="2"> 95% dan kam</label>
+            <label><input type="radio" name="q12" value="0"> 100 - 96%</label>
+            <label><input type="radio" name="q12" value="1"> 95 - 90 %</label>
+            <label><input type="radio" name="q12" value="2"> 90% dan kam</label>
         </div>
         <div class="question">
             <p>Tana xaroratini oshishi</p>
-            <label><input type="radio" name="q13" value="0"> Yo'q</label>
-            <label><input type="radio" name="q13" value="1"> Subfibril</label>
-            <label><input type="radio" name="q13" value="2"> Fibril</label>
+            <label><input type="radio" name="q13" value="0"> 36<sup>6</sup> - 36<sup>9</sup></label>
+            <label><input type="radio" name="q13" value="1"> 37 - 37<sup>9</sup></label>
+            <label><input type="radio" name="q13" value="2"> 38 dan yuqori</label>
         </div>
         <div class="question">
             <p>Terining qurishi</p>
@@ -223,26 +229,32 @@ button:hover {
         <div class="question">
             <p>Diareya</p>
             <label><input type="radio" name="q17" value="0"> Yo'q</label>
-            <label><input type="radio" name="q17" value="1"> 5 martagacha</label>
-            <label><input type="radio" name="q17" value="2"> 5 martadan ko'p</label>
+            <label><input type="radio" name="q17" value="1"> 3 martagacha</label>
+            <label><input type="radio" name="q17" value="2"> 3 martadan ko'p</label>
         </div>
         <div class="question">
             <p>Qabziyat</p>
             <label><input type="radio" name="q18" value="0"> Yo'q</label>
-            <label><input type="radio" name="q18" value="1"> Variant 2</label>
-            <label><input type="radio" name="q18" value="2"> Variant 3</label>
+            <label><input type="radio" name="q18" value="1"> 24 - 48 soat ichida</label>
+            <label><input type="radio" name="q18" value="2"> 48 soatdan ko'p</label>
         </div>
         <div class="question">
             <p>Qusish</p>
             <label><input type="radio" name="q19" value="0"> Yo'q</label>
-            <label><input type="radio" name="q19" value="1"> 2 martagacha</label>
-            <label><input type="radio" name="q19" value="2"> Yaqqol ifodalangan</label>
+            <label><input type="radio" name="q19" value="1"> 2 marta</label>
+            <label><input type="radio" name="q19" value="2"> Ko'p marta</label>
         </div>
         <div class="question">
             <p>Taxikardiya</p>
             <label><input type="radio" name="q20" value="0"> Yo'q</label>
             <label><input type="radio" name="q20" value="1"> 130 ta gacha</label>
             <label><input type="radio" name="q20" value="2"> 130 tadan yuqori</label>
+        </div>
+        <div class="question">
+            <p>Burun oqish</p>
+            <label><input type="radio" name="q21" value="0"> Yo'q</label>
+            <label><input type="radio" name="q21" value="1"> Biroz</label>
+            <label><input type="radio" name="q21" value="2"> Yaqqol</label>
         </div>
 
 
@@ -257,29 +269,26 @@ button:hover {
             let totalScore = 0;
             const form = document.getElementById("quizForm");
             const inputs = form.getElementsByTagName("input");
-
+            
             for (let input of inputs) {
                 if (input.checked) {
                     totalScore += parseInt(input.value);
                 }
             }
-
+            
             let resultText = "";
-            if (totalScore >= 0 && totalScore <= 30) {
-                resultText = "Zotiljam xavfi past!";
-            } else if (totalScore > 0 && totalScore <= 15) {
+            if (totalScore <= 15) {
                 resultText = "Zotiljam xavfi yo'q!";
+            } else if (totalScore <= 30) {
+                resultText = "Zotiljam xavfi past!";
             } else {
                 resultText = "Zotiljam ehtimoli mavjud!";
             }
-
-            document.getElementById("result").innerText = `Sizning umumiy balingiz: ${totalScore}. ${resultText}`;
+            
+            const resultElement = document.getElementById("result");
+            resultElement.innerText = `Sizning umumiy balingiz: ${totalScore}. ${resultText}`;
+            resultElement.style.display = "block";
         }
-
-
-
-
-        //zotiljamni-aniqlash-algoritm
     </script>
 
 </body>
