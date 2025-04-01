@@ -168,20 +168,20 @@
         <div class="question">
             <p>Bezovtalik</p>
             <label><input type="radio" name="q7" value="0"> Yo'q</label>
-            <label><input type="radio" name="q7" value="1"> Biroz</label>
-            <label><input type="radio" name="q7" value="2"> Bezovta</label>
+            <label><input type="radio" name="q7" value="0.5"> Biroz</label>
+            <label><input type="radio" name="q7" value="1"> Bezovta</label>
         </div>
         <div class="question">
             <p>Uyquning buzilishi</p>
             <label><input type="radio" name="q8" value="0"> Yo'q</label>
-            <label><input type="radio" name="q8" value="1"> 1 marta</label>
-            <label><input type="radio" name="q8" value="2"> Ko'p marta</label>
+            <label><input type="radio" name="q8" value="0.5"> 1 marta</label>
+            <label><input type="radio" name="q8" value="1"> Ko'p marta</label>
         </div>
         <div class="question">
             <p>Ovqatdan bosh tortish</p>
             <label><input type="radio" name="q9" value="0"> Yo'q</label>
-            <label><input type="radio" name="q9" value="1"> Ishtaxa past</label>
-            <label><input type="radio" name="q9" value="2"> Ovqatdan bosh tortadi</label>
+            <label><input type="radio" name="q9" value="0.5"> Ishtaxa past</label>
+            <label><input type="radio" name="q9" value="1"> Ovqatdan bosh tortadi</label>
         </div>
         <div class="question">
             <p>Holsizlik</p>
@@ -211,14 +211,14 @@
         <div class="question">
             <p>Terining qurishi</p>
             <label><input type="radio" name="q14" value="0"> Yo'q</label>
-            <label><input type="radio" name="q14" value="1"> Biroz</label>
-            <label><input type="radio" name="q14" value="2"> Yaqqol ifodalangan</label>
+            <label><input type="radio" name="q14" value="0.5"> Biroz</label>
+            <label><input type="radio" name="q14" value="1"> Yaqqol ifodalangan</label>
         </div>
         <div class="question">
             <p>Marmarsimon teri</p>
             <label><input type="radio" name="q15" value="0"> Yo'q</label>
-            <label><input type="radio" name="q15" value="1"> Biroz</label>
-            <label><input type="radio" name="q15" value="2"> Yaqqol ifodalangan</label>
+            <label><input type="radio" name="q15" value="0.5"> Biroz</label>
+            <label><input type="radio" name="q15" value="1"> Yaqqol ifodalangan</label>
         </div>
         <div class="question">
             <p>Kataral belgilar</p>
@@ -229,20 +229,20 @@
         <div class="question">
             <p>Diareya</p>
             <label><input type="radio" name="q17" value="0"> Yo'q</label>
-            <label><input type="radio" name="q17" value="1"> 3 martagacha</label>
-            <label><input type="radio" name="q17" value="2"> 3 martadan ko'p</label>
+            <label><input type="radio" name="q17" value="0.5"> 3 martagacha</label>
+            <label><input type="radio" name="q17" value="1"> 3 martadan ko'p</label>
         </div>
         <div class="question">
             <p>Qabziyat</p>
             <label><input type="radio" name="q18" value="0"> Yo'q</label>
-            <label><input type="radio" name="q18" value="1"> 24 - 48 soat ichida</label>
-            <label><input type="radio" name="q18" value="2"> 48 soatdan ko'p</label>
+            <label><input type="radio" name="q18" value="0.5"> 24 - 48 soat ichida</label>
+            <label><input type="radio" name="q18" value="1"> 48 soatdan ko'p</label>
         </div>
         <div class="question">
             <p>Qusish</p>
             <label><input type="radio" name="q19" value="0"> Yo'q</label>
-            <label><input type="radio" name="q19" value="1"> 2 marta</label>
-            <label><input type="radio" name="q19" value="2"> Ko'p marta</label>
+            <label><input type="radio" name="q19" value="0.5"> 2 marta</label>
+            <label><input type="radio" name="q19" value="1"> Ko'p marta</label>
         </div>
         <div class="question">
             <p>Taxikardiya</p>
@@ -272,14 +272,15 @@
             
             for (let input of inputs) {
                 if (input.checked) {
-                    totalScore += parseInt(input.value);
+                    totalScore += parseFloat(input.value);
+                    
                 }
             }
             
             let resultText = "";
-            if (totalScore <= 15) {
+            if (totalScore <= 16) {
                 resultText = "Zotiljam xavfi yo'q!";
-            } else if (totalScore <= 30) {
+            } else if (totalScore < 25) {
                 resultText = "Zotiljam xavfi past!";
             } else {
                 resultText = "Zotiljam ehtimoli mavjud!";
